@@ -14,22 +14,20 @@ document.addEventListener("DOMContentLoaded", function () {
         const username = usernameInput.value.trim();
         if (!username) return;
 
-     chrome.storage.local.get(["hiddenUsers"], function (result) {
-    let users = result.hiddenUsers;
+        chrome.storage.local.get(["hiddenUsers"], function (result) {
+            let users = result.hiddenUsers || [];
 
-    // Fix: Ensure users is always an array, even after importing
-    if (!Array.isArray(users)) {
-        users = [];
-    }
-
-    // Save the fixed list back to storage (only if it was invalid)
-    chrome.storage.local.set({ hiddenUsers: users });
-
-    users.forEach(username => addUserToList(username)); // Load users into UI
-});
-
-        
+            // Prevent duplicates
+            if (!users.includes(username)) {
+                users.push(username);
+                chrome.storage.local.set({ hiddenUsers: users }, function () {
+                    addUserToList(username);
+                    notifyContentScript(); // Notify content script after adding
+                });
+            }
+        });
     });
+
 
     function removeUser(username) {
         chrome.storage.local.get(["hiddenUsers"], function (result) {
