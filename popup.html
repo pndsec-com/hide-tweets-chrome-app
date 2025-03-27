@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hidden Users</title>
+    <style>
+        body { font-family: Arial, sans-serif; width: 300px; padding: 10px; }
+        ul { list-style: none; padding: 0; }
+        li { display: flex; justify-content: space-between; align-items: center; padding: 5px; border: 1px solid #ccc; margin: 5px 0; }
+        button.remove { cursor: pointer; background: red; color: white; border: none; padding: 3px 7px; margin-left: 10px; border-radius: 3px; }
+    </style>
+</head>
+<body>
+    <h3>Manage Hidden Users</h3>
+    <input type="text" id="username" placeholder="Enter username">
+    <button id="addUser">Add User</button>
+    <ul id="userList"></ul>
+    <button id="export">Export</button>
+    <input type="file" id="import" accept="application/json">
+    <script src="popup.js"></script>
+</body>
+</html>

@@ -1,0 +1,23 @@
+{
+  "manifest_version": 3,
+  "name": "Tweet Hider",
+  "version": "1.1",
+  "description": "Hide tweets from specific users and manage lists.",
+  "permissions": ["storage"],
+  "host_permissions": ["https://twitter.com/*", "https://x.com/*"],
+  "action": {
+    "default_popup": "popup.html",
+    "default_icon": {
+      "16": "images/icon16.png",
+      "64": "images/icon64.png",
+      "128": "images/icon128.png"
+    }
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://twitter.com/*", "https://x.com/*"],
+      "js": ["content.js"],
+      "run_at": "document_idle"
+    }
+  ]
+}
