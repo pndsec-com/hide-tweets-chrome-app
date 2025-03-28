@@ -48,4 +48,4 @@ Feel free to submit pull requests or open issues for feature requests and bug re
 
 MIT License
 
-🐼 Say with Panda!
+🐼 Stay with Panda!
