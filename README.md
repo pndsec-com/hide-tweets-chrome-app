@@ -39,6 +39,7 @@ git clone https://github.com/pndsec-com/hide-tweets-chrome-app.git
 * UI Improvements: Enhance user experience with a better design.
 * Sync Across Devices: Enable Chrome sync for user lists.
 * Statistics: Show a summary of how many tweets have been hidden.
+* Share your manual list.
 
 ## Contributing
 
